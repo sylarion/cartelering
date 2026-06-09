@@ -67,7 +67,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <div className="flex flex-col sm:flex-row gap-4 pt-4">
             <a
               href="#cotizar"
-              className="inline-flex items-center justify-center bg-primary hover:bg-[#713523] text-white font-heading font-medium px-8 py-3.5 rounded text-xs uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer text-center shadow-[0_14px_30px_rgba(113,53,35,0.22)]"
+              className="inline-flex items-center justify-center bg-primary hover:bg-[#743A28] text-white font-heading font-medium px-8 py-3.5 rounded text-xs uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer text-center shadow-[0_12px_26px_rgba(116,58,40,0.20)] hover:shadow-[0_14px_32px_rgba(116,58,40,0.24)]"
             >
               Solicitar Cotización Técnica
             </a>
@@ -75,7 +75,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
               href={directWhatsAppLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-[#EAE3DA] border border-[#D6CDC2] hover:border-[#A8764F] text-[#2B2927] hover:text-[#713523] font-heading font-medium px-8 py-3.5 rounded text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer text-center"
+              className="inline-flex items-center justify-center gap-2 bg-transparent hover:bg-[#EAE3DA] border border-[#D6CDC2] hover:border-[#A8764F] text-[#2B2927] hover:text-[#743A28] font-heading font-medium px-8 py-3.5 rounded text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer text-center"
             >
               <MessageSquare className="size-4" />
               Contacto WhatsApp

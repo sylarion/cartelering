@@ -9,8 +9,10 @@ import { cn } from "@/lib/utils";
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
@@ -29,13 +31,13 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 flex items-center ${
         isScrolled
-          ? "bg-background/92 backdrop-blur-[14px] border-b border-[rgba(214,205,194,0.75)] py-3 shadow-[0_2px_20px_rgba(17,17,17,0.06)]"
-          : "bg-transparent py-5 border-b border-transparent"
+          ? "bg-background/92 backdrop-blur-[14px] border-b border-[rgba(214,205,194,0.75)] h-[72px] shadow-[0_2px_20px_rgba(17,17,17,0.06)]"
+          : "bg-transparent h-[84px] border-b border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="flex items-center justify-between h-[54px]">
           {/* Logo */}
           <Link
@@ -79,31 +81,26 @@ export default function Header() {
 
           {/* Right side: phone + CTA */}
           <div className="hidden md:flex items-center gap-5">
-            {/* Teléfono — link limpio, sin caja ni placeholder */}
-            <a
-              href="https://wa.me/5491123456789"
-              target="_blank"
-              rel="noopener noreferrer"
-              suppressHydrationWarning
-              aria-label="Contactar por WhatsApp al +54 9 11 2345-6789"
-              className="flex items-center gap-1.5 text-[13px] font-bold tracking-[0.04em] text-muted-foreground hover:text-foreground transition-colors duration-200 whitespace-nowrap"
-            >
-              <MessageCircle
-                className="size-3.5 shrink-0 opacity-70"
-                aria-hidden="true"
-              />
-              <span
-                suppressHydrationWarning
-                className="inline-flex items-center"
+            {/* Teléfono — link limpio, sin caja ni placeholder, seguro contra hydration mismatch */}
+            {isMounted ? (
+              <a
+                href="https://wa.me/5491123456789"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Contactar por WhatsApp al +54 9 11 2345-6789"
+                className="flex items-center gap-1.5 text-[13px] font-bold tracking-[0.04em] text-muted-foreground hover:text-foreground transition-colors duration-200 whitespace-nowrap"
               >
-                <span>+54</span>
-                <span className="mx-1">9</span>
-                <span>11</span>
-                <span className="mx-1">2345</span>
-                <span>-</span>
-                <span>6789</span>
-              </span>
-            </a>
+                <MessageCircle
+                  className="size-3.5 shrink-0 opacity-70 text-primary"
+                  aria-hidden="true"
+                />
+                <span className="header-phone">
+                  +54 9 11 2345-6789
+                </span>
+              </a>
+            ) : (
+              <div className="w-[160px]" />
+            )}
 
             <Link
               href="/#presupuesto"
@@ -149,15 +146,19 @@ export default function Header() {
             ))}
           </nav>
           <div className="border-t border-border/60 mt-3 pt-4 flex flex-col space-y-3">
-            <a
-              href="https://wa.me/5491123456789"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm font-bold text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2.5 py-2 px-3"
-            >
-              <MessageCircle className="size-4 opacity-60" />
-              +54 9 11 2345-6789
-            </a>
+            {isMounted ? (
+              <a
+                href="https://wa.me/5491123456789"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-bold text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2.5 py-2 px-3"
+              >
+                <MessageCircle className="size-4 opacity-60 text-primary" />
+                +54 9 11 2345-6789
+              </a>
+            ) : (
+              <div className="h-9" />
+            )}
             <Link
               href="/#presupuesto"
               onClick={() => setIsMobileMenuOpen(false)}

@@ -242,7 +242,7 @@ export default function PortfolioSection() {
                   <Button
                     variant="default"
                     size="lg"
-                    className="w-full sm:w-auto bg-primary hover:bg-[#713523] text-white font-heading font-medium px-6 py-2.5 rounded text-xs uppercase tracking-wide cursor-pointer shadow-[0_10px_24px_rgba(113,53,35,0.22)] transition-all duration-300"
+                    className="w-full sm:w-auto bg-primary hover:bg-[#743A28] text-white font-heading font-medium px-6 py-2.5 rounded text-xs uppercase tracking-wide cursor-pointer shadow-[0_10px_24px_rgba(116,58,40,0.20)] transition-all duration-300"
                     onClick={() => {
                       setSelectedProject(null);
                       window.location.hash = "#presupuesto";

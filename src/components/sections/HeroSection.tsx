@@ -75,7 +75,7 @@ export default function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative min-h-[95vh] flex flex-col justify-center overflow-hidden pt-28 pb-16 bg-background bg-grid-printy"
+      className="relative min-h-[85vh] flex flex-col justify-center overflow-hidden pt-24 pb-14 bg-background bg-grid-printy"
     >
       {/* Background Gradients and Light Effects */}
       <div className="absolute inset-0 z-0">
@@ -103,12 +103,12 @@ export default function HeroSection() {
                 variants={itemVariants}
                 className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest"
                 style={{
-                  background: "rgba(158, 79, 53, 0.055)",
-                  border: "1px solid rgba(158, 79, 53, 0.18)",
-                  color: "#9E4F35"
+                  background: "rgba(168, 90, 61, 0.055)",
+                  border: "1px solid rgba(168, 90, 61, 0.18)",
+                  color: "#A85A3D"
                 }}
               >
-                <Sparkles className="size-3" style={{ color: "#9E4F35" }} />
+                <Sparkles className="size-3" style={{ color: "#A85A3D" }} />
                 <span>CARTELERÍA · BRANDING FÍSICO · PRODUCCIÓN VISUAL</span>
               </motion.div>
               
@@ -135,9 +135,9 @@ export default function HeroSection() {
               >
                 <Link
                   href="/#presupuesto"
-                 className={cn(
+                  className={cn(
                     buttonVariants({ variant: "default", size: "lg" }),
-                    "bg-primary hover:bg-[#713523] text-white font-heading font-medium h-12 px-8 rounded text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-[0_14px_30px_rgba(113,53,35,0.22)] border border-primary/80"
+                    "bg-primary hover:bg-[#743A28] text-white font-heading font-medium h-12 px-8 rounded text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer shadow-[0_12px_26px_rgba(116,58,40,0.20)] hover:shadow-[0_14px_32px_rgba(116,58,40,0.24)] border border-primary"
                   )}
                 >
                   Solicitar Presupuesto
@@ -147,7 +147,7 @@ export default function HeroSection() {
                   href="/#portfolio"
                   className={cn(
                     buttonVariants({ variant: "outline", size: "lg" }),
-                    "bg-transparent hover:bg-[#EAE3DA] border border-[#D6CDC2] hover:border-[#A8764F] text-[#2B2927] hover:text-[#713523] font-heading font-medium h-12 px-8 rounded text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer"
+                    "bg-transparent hover:bg-[#EAE3DA] border border-[#D6CDC2] hover:border-[#A8764F] text-[#2B2927] hover:text-[#743A28] font-heading font-medium h-12 px-8 rounded text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-all duration-300 hover:scale-[1.02] active:scale-95 cursor-pointer"
                   )}
                 >
                   Explorar proyectos
